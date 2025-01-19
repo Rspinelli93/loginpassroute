@@ -24,7 +24,7 @@ const setup = (app) => {
     `);
   })
 
-  app.get('/profile', middlewares.verificarSesionMiddleware, (req, res) => {
+  app.post('/profile', middlewares.validarPalabraMiddleware, (req, res) => {
       res.send(`
         <h1>Ruta del Perfil (Sesión activa)</h1>
         <form method="post" action="/logout">
