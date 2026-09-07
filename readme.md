@@ -1,35 +1,50 @@
-## PUZZLE con código
+# Session and secret-word exercise
 
-Bienvenidos al puzzle de código. Como sabéis un puzzle se compone de piezas y esas piezas cuando encajan nos muestra algo. En este caso pasa lo mismo, al juntar todos los trozos del código obtendras la aplicación.
+A modular Express exercise that handles a form submission, stores session state, and protects a profile route using a configured secret word.
 
-## Esta aplicación lo que hace es lo siguiente:
-- Cuando entras en la ruta "/" Aparece un input para introducir una palabra. Si es correcta pasaremos a la de exito y sino dara un error y volverá el input para volver a intentarlo.
+**Collection:** Node.js and APIs · [Project directory](https://github.com/Rspinelli93/Rspinelli93/blob/main/PROJECTS.md)
 
-## Conociendo el fuincionamiento vamos a ver la estructura:
-- `app.js`: nuestra raiz del código
-- `middlewares.js`: Paso previo a las rutas
-- `routes.js`: Las rutas de cada end point
-- `.env`: Aqui se encuentra la palabra secreta
+## Stack
 
-* Además hay un archivo `puzzle.js` en el que están todos y cada uno de los "trozos" de código que necesitarás para componerlo. Está descolocado, por tanto tendrás que coger cada trozo y llevarlo donde sea necesario. 
+`body-parser`, `dotenv`, `express`, `express-session`.
 
-* Esos "trozos" tienen dos partes. 
+## Run locally
 
-- Una pondrá "si ya lo has usado", si es así no se puede volver a usar. Márcalo con una X o un yes.... Así llevarás un registro visual de lo que llevas y lo que te queda. 
-- También hay otro apartado donde pone "explicación". Ahí deberás poner un pequeño resumen de lo que hace ese trozo de código. Podéis buscar en internet cosas que no sepáis para poder componeren la totalidad el programa.
+Install Node.js and npm, then run:
 
-Así más o menos podría quiedar:
-//Usado?: YES
-  const middlewares = require('./middlewares');
-//--- Explicación: 
-Almaceno en una variable lo que hay dentro del archivo 'middlewares' par apoder usarlo.
-// -------------------------------------------------------------------------------------
+```bash
+git clone https://github.com/Rspinelli93/loginpassroute.git
+cd loginpassroute
+npm install
+npm start
+```
 
+The start script uses Node’s `--watch` option; use a Node version that supports it.
 
-## Sabiendo todo esto, ¿Qué tengo que hacer?
-Fácil, cogeréis cada trozo de código que se dividirá entre `app.js`, `middlewares.js` y `routes.js`. Una vez hecho lanzarás lanzarás la aplicación y vermos si funciona o no ;).
+## Configuration
 
-## CONSEJOS
-- Comienza por lo sencillo. Como inicializar el servidor, requerir express, ...
-- Muxhos exports, nos da la idea de lo que puede haber dentro de cada archivo
-- No te olvides de hacer `npm install` para que las dependencias se instalen en nuestro proyecto
+The source reads these environment variables. Configure them locally before starting the relevant integrations; values are not included here.
+
+| Variable | Used by |
+| --- | --- |
+| `PALABRA_SECRETA` | [`middlewares.js`](middlewares.js), [`middlewares.js`](middlewares.js) |
+
+## Available commands
+
+| Command | Script in package.json |
+| --- | --- |
+| `npm run start` | `node --watch app.js` |
+
+The `test` script is a placeholder; an automated test suite is not configured through that command.
+
+## Repository guide
+
+- [`app.js`](app.js)
+- [`middlewares.js`](middlewares.js)
+- [`package.json`](package.json)
+- [`puzzle.js`](puzzle.js)
+- [`routes.js`](routes.js)
+
+---
+
+[Back to my GitHub profile](https://github.com/Rspinelli93)
